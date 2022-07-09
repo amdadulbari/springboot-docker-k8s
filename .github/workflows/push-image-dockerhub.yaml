@@ -1,0 +1,14 @@
+name: Dockerize the spring-boot application
+on: push
+jobs:
+  push-image-docker-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: amdadulbari/springboot-docker-k8s
+          tags: latest, ${{ github.run_number }}
