@@ -12,7 +12,7 @@ public class HelloWorldController {
 
     @GetMapping(path = "/")
     public String imUpAndRunning() {
-        String hostName = "<h2>Hello!!<br>Host= " + containerInfoService.getContainerInfo()+"<br>Version= 4</h2>";
+        String hostName = "<h2>Hello!!<br>Host= " + containerInfoService.getContainerInfo()+"<br>Version= 5</h2>";
         return hostName;
     }
 
